@@ -11,6 +11,10 @@
 #if (defined _MSC_VER) && (_MSC_VER == 1200)
 #  pragma warning (disable : 4786) // too long name, harmless warning
 #endif
+#ifdef _MSC_VER
+#  pragma warning(push)
+#  pragma warning(disable:4996)
+#endif
 
 #include <istream>
 #include <algorithm>
@@ -466,3 +470,7 @@ bool basic_xml_grammar<CharType>::windup(IStream & is) {
 
 } // namespace archive
 } // namespace boost
+
+#ifdef _MSC_VER
+#  pragma warning(pop)
+#endif
