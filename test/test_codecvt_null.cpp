@@ -48,6 +48,10 @@ wchar_t test_data<2>::wchar_encoding[] = {
     (wchar_t) 0x7fff
 };
 
+#ifdef BOOST_MSVC
+#pragma warning(disable: 4305 4309 4310 4838)
+#endif
+
 template<>
 wchar_t test_data<4>::wchar_encoding[] = {
     (wchar_t) 0x00000001,

@@ -27,6 +27,11 @@ namespace std {
 }
 #endif
 
+#ifdef BOOST_MSVC
+#pragma warning(push)
+#pragma warning(disable: 4996)
+#endif
+
 namespace boost {
 namespace archive {
 
@@ -46,5 +51,9 @@ inline const char * tmpdir(){
 
 } // archive
 } // boost
+
+#ifdef BOOST_MSVC
+#pragma warning(pop)
+#endif
 
 #endif // BOOST_ARCHIVE_TMPDIR_HPP

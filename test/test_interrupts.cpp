@@ -35,7 +35,7 @@ struct test_dummy_out {
         );
     }
     template<class Archive>
-    void load(Archive & ar, const unsigned int version){
+    void load(Archive & /* ar */, const unsigned int /* version */){
     }
     BOOST_SERIALIZATION_SPLIT_MEMBER()
     test_dummy_out(){}

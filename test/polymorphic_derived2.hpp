@@ -37,6 +37,9 @@
 #ifndef POLYMORPHIC_DERIVED2_DLL_DECL
     #define POLYMORPHIC_DERIVED2_DLL_DECL
 #endif
+#if defined(_MSC_VER)
+# pragma warning(disable:4275) // non dll-interface class 'polymorphic_base' used as base for dll-interface class 'polymorphic_derived2'
+#endif
 
 #include "polymorphic_base.hpp"
 

@@ -14,7 +14,7 @@
 
 struct A {
     template<class Archive>
-    void serialize(Archive & ar, unsigned int version) {
+    void serialize(Archive & /*ar*/, unsigned int /*version*/) {
     }
 };
 
