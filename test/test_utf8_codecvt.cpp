@@ -101,6 +101,10 @@ unsigned char test_data<4>::utf8_encoding[] = {
     */
 };
 
+#ifdef BOOST_MSVC
+#pragma warning(disable: 4310) // cast truncates constant value
+#endif
+
 template<>
 wchar_t test_data<4>::wchar_encoding[] = {
     (wchar_t)0x00000001,

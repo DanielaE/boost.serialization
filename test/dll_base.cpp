@@ -15,7 +15,7 @@
 
 template<class Archive>
 void base::serialize(
-    Archive &ar,
+    Archive & /* ar */,
     const unsigned int /* file_version */){
 }
 
