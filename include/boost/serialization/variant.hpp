@@ -55,6 +55,7 @@ struct variant_save_visitor :
         m_ar << BOOST_SERIALIZATION_NVP(value);
     }
 private:
+    variant_save_visitor& operator=(const variant_save_visitor&);
     Archive & m_ar;
 };
 
