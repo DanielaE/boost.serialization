@@ -22,7 +22,7 @@ BOOST_CLASS_VERSION(B, 2)
 BOOST_CLASS_TRACKING(B, boost::serialization::track_always)
 
 int
-test_main( int argc, char* argv[] )
+test_main( int, char*[] )
 {
     return EXIT_SUCCESS;
 }

@@ -72,6 +72,11 @@ namespace std{
     #define STRCPY std::strcpy
 #endif
 
+#ifdef BOOST_MSVC
+#  pragma warning(push)
+#  pragma warning(disable: 4996)
+#endif
+
 namespace boost {
 namespace archive {
     const char * test_filename(const char * dir = NULL, char *fname = NULL){
@@ -107,6 +112,10 @@ namespace archive {
     }
 } // archive
 } // boost
+
+#ifdef BOOST_MSVC
+#  pragma warning(pop)
+#endif
 
 #else // defined(_WIN32) || defined(__WIN32__) || defined(WIN32)
 #if defined(__hpux)

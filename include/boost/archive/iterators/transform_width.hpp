@@ -4,6 +4,8 @@
 // MS compatible compilers support #pragma once
 #if defined(_MSC_VER)
 # pragma once
+# pragma warning(push)
+# pragma warning(disable: 4127) // conditional expression is constant
 #endif
 
 /////////1/////////2/////////3/////////4/////////5/////////6/////////7/////////8
@@ -172,5 +174,9 @@ void transform_width<Base, BitsOut, BitsIn, CharType>::fill() {
 } // namespace iterators
 } // namespace archive
 } // namespace boost
+
+#if defined(_MSC_VER)
+# pragma warning(pop)
+#endif
 
 #endif // BOOST_ARCHIVE_ITERATORS_TRANSFORM_WIDTH_HPP

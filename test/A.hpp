@@ -42,6 +42,9 @@ namespace std{
 #else
     #define A_DLL_DECL
 #endif
+#if defined(_MSC_VER)
+# pragma warning(disable:4251) // class '...' needs to have dll-interface to be used by clients of class 'A'
+#endif
 
 class A_DLL_DECL A {
 private:

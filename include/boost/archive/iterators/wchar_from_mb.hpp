@@ -172,7 +172,7 @@ void wchar_from_mb<Base>::drain(){
         m_output.m_buffer.end(),
         next_available
     );
-    BOOST_ASSERT(std::codecvt_base::ok == r);
+    BOOST_ASSERT(std::codecvt_base::ok == r); (void)r;
     m_output.m_next_available = next_available;
     m_output.m_next = m_output.m_buffer.begin();
 

@@ -90,7 +90,7 @@ class mb_from_wchar
             & value, & value + 1, wend,
             m_buffer, m_buffer + sizeof(m_buffer), bend
         );
-        BOOST_ASSERT(std::codecvt_base::ok == r);
+        BOOST_ASSERT(std::codecvt_base::ok == r); (void)r;
         m_bnext = 0;
         m_bend = bend - m_buffer;
     }

@@ -29,6 +29,10 @@ namespace std{
 #include "A.hpp"
 #include "A.ipp"
 
+#if defined(BOOST_MSVC)
+# pragma warning(disable: 4312) // 'reinterpret_cast': conversion from 'unsigned int' to 'J *' of greater size
+#endif
+
 ///////////////////////////////////////////////////////
 // class with a member which refers to itself
 class J : public A
