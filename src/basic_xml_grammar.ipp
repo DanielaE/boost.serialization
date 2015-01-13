@@ -194,7 +194,15 @@ bool basic_xml_grammar<CharType>::my_parse(
             boost::serialization::throw_exception(
                 boost::archive::archive_exception(
                     archive_exception::input_stream_error,
+#ifdef BOOST_MSVC
+#pragma warning(push)
+#pragma warning(disable: 4996) // 'strerror': This function or variable may be unsafe
+#endif
+					
                     std::strerror(errno)
+#ifdef BOOST_MSVC
+#pragma warning(pop)
+#endif
                 )
             );
         }
