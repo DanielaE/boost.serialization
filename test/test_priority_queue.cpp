@@ -50,7 +50,7 @@ int test_main( int /* argc */, char* /* argv */[] )
     }
     BOOST_CHECK(a_priority_queue.size() == a_priority_queue1.size());
     
-    for(int i = a_priority_queue.size(); i-- > 0;){
+    for(size_t i = a_priority_queue.size(); i-- > 0;){
         const A & a1 = a_priority_queue.top();
         const A & a2 = a_priority_queue1.top();
         BOOST_CHECK(a1 == a2);

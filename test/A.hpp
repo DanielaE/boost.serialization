@@ -26,6 +26,11 @@ namespace std{
 }
 #endif
 
+#ifdef BOOST_MSVC
+#  pragma warning(push)
+#  pragma warning(disable: 4251)
+#endif
+
 #include <boost/detail/workaround.hpp>
 #include <boost/limits.hpp>
 #include <boost/cstdint.hpp>
@@ -153,5 +158,9 @@ public:
 };
 
 #undef DLL_DECL
+
+#ifdef BOOST_MSVC
+#  pragma warning(pop)
+#endif
 
 #endif // BOOST_SERIALIZATION_TEST_A_HPP
