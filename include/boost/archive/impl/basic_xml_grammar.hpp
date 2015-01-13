@@ -50,6 +50,11 @@
 #include <boost/config.hpp>
 #include <boost/detail/workaround.hpp>
 
+#ifdef BOOST_MSVC
+#  pragma warning(push)
+#  pragma warning(disable : 4244)
+#endif
+
 #include <boost/spirit/include/classic_rule.hpp>
 #include <boost/spirit/include/classic_chset.hpp>
 
@@ -169,5 +174,9 @@ public:
 
 } // namespace archive
 } // namespace boost
+
+#ifdef BOOST_MSVC
+#  pragma warning(pop)
+#endif
 
 #endif // BOOST_ARCHIVE_BASIC_XML_GRAMMAR_HPP

@@ -87,6 +87,8 @@ class mb_from_wchar
         #if (defined(__MINGW32__) && ((__MINGW32_MAJOR_VERSION > 3) \
         || ((__MINGW32_MAJOR_VERSION == 3) && (__MINGW32_MINOR_VERSION >= 8))))
         m_bend = std::wcrtomb(m_buffer, value, 0);
+        #elif defined (BOOST_MSVC)
+        ::wctomb_s(&m_bend, m_buffer, sizeof(m_buffer), value);
         #else
         m_bend = std::wctomb(m_buffer, value);
         #endif

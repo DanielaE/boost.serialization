@@ -146,7 +146,7 @@ template<class String>
 struct append_char {
     String & contents;
     void operator()(const unsigned int char_value) const {
-        const BOOST_DEDUCED_TYPENAME String::value_type z = char_value;
+        const BOOST_DEDUCED_TYPENAME String::value_type z = static_cast<String::value_type>(char_value);
         contents += z;
     }
     append_char(String & contents_)

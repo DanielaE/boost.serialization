@@ -72,6 +72,8 @@ class helper_collection
         predicate(const void * ti) :
             m_ti(ti)
         {}
+    private:
+        predicate& operator=(const predicate&);
     };
 protected:
     helper_collection(){}

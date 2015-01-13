@@ -71,7 +71,7 @@ class istream_iterator :
 */
     //Access the value referred to 
     Elem dereference() const {
-        return m_istream->peek();
+        return static_cast<Elem>(m_istream->peek());
     }
 
     void increment(){
