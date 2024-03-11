@@ -11,7 +11,7 @@
 # tests.
 
 # import rules for testing conditional on config file variables
-import ../../config/checks/config : requires ;
+import config : requires ;
 
 BOOST_ARCHIVE_LIST = [ modules.peek : BOOST_ARCHIVE_LIST ] ;
 

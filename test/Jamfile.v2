@@ -6,13 +6,14 @@
 #  LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 #
 
-project libs/serialization/test
+project
     : id serialization_test
-    : requirements <library>/boost/filesystem
+    : requirements <library>/boost/filesystem//boost_filesystem
+        <library>/boost/math//boost_math
     ;
 
 # import rules for testing conditional on config file variables
-import ../../config/checks/config : requires ;
+import config : requires ;
 
 # import rules from the boost serialization test
 import ../util/test :

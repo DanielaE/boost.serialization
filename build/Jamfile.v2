@@ -6,13 +6,15 @@
 #
 #  See http://www.boost.org/libs/serialization for the library home page.
 
-project boost/serialization
+require-b2 5.0.1 ;
+import-search /boost/config/checks ;
+import config : requires ;
+
+project
     : source-location ../src
     : requirements
       <conditional>@include-spirit
 ;
-
-import ../../config/checks/config : requires ;
 
 SPIRIT_ROOT = [ modules.peek : SPIRIT_ROOT ] ;
 rule include-spirit ( properties * )
@@ -144,5 +146,3 @@ lib boost_wserialization
     # switch - don't change it to BOOST_WSERIALIZATION_DYN_LINK
     <link>shared:<define>BOOST_SERIALIZATION_DYN_LINK=1
     ;
-
-boost-install boost_serialization boost_wserialization ;
