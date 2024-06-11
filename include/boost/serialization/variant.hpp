@@ -216,7 +216,7 @@ void load(
     int which;
     typedef typename boost::variant<Types...>::types types;
     ar >> BOOST_SERIALIZATION_NVP(which);
-    if(which >=  sizeof...(Types)){
+    if(static_cast<std::size_t>(which) >= sizeof...(Types)){
         // this might happen if a type was removed from the list of variant types
         boost::serialization::throw_exception(
             boost::archive::archive_exception(
@@ -238,7 +238,7 @@ void load(
     int which;
     typedef typename boost::variant<Types...>::types types;
     ar >> BOOST_SERIALIZATION_NVP(which);
-    if(which >=  sizeof...(Types)){
+    if(static_cast<std::size_t>(which) >= sizeof...(Types)){
         // this might happen if a type was removed from the list of variant types
         boost::serialization::throw_exception(
             boost::archive::archive_exception(

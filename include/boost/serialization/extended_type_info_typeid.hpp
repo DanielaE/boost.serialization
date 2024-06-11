@@ -117,15 +117,15 @@ public:
         va_start(ap, count);
         switch(count){
         case 0:
-            r = factory<typename boost::remove_const< T >::type, 0>(ap);
+            r = factory<typename boost::remove_const< T >::type, 0>(ap); break;
         case 1:
-            r = factory<typename boost::remove_const< T >::type, 1>(ap);
+            r = factory<typename boost::remove_const< T >::type, 1>(ap); break;
         case 2:
-            r = factory<typename boost::remove_const< T >::type, 2>(ap);
+            r = factory<typename boost::remove_const< T >::type, 2>(ap); break;
         case 3:
-            r = factory<typename boost::remove_const< T >::type, 3>(ap);
+            r = factory<typename boost::remove_const< T >::type, 3>(ap); break;
         case 4:
-            r = factory<typename boost::remove_const< T >::type, 4>(ap);
+            r = factory<typename boost::remove_const< T >::type, 4>(ap); break;
         default:
             BOOST_ASSERT(false); // too many arguments
             // throw exception here?

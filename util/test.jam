@@ -52,9 +52,6 @@ rule run-template ( test-name : sources * : files * : requirements * ) {
             <toolset>msvc:<cxxflags>"-wd4996"
             <toolset>clang:<variant>debug:<cxxflags>"-fsanitize=memory"
             # toolset optimizations
-            <toolset>gcc:<cxxflags>"-ftemplate-depth-255"
-            <toolset>clang:<cxxflags>"-ftemplate-depth-255"
-            <toolset>darwin:<cxxflags>"-ftemplate-depth-255"
             <toolset>msvc:<cxxflags>"-Gy"
             # linking
             <link>shared:<define>BOOST_SERIALIZATION_DYN_LINK=1
