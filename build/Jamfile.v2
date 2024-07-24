@@ -12,6 +12,7 @@ import config : requires ;
 
 project
     : source-location ../src
+    : common-requirements <library>$(boost_dependencies)
     : requirements
       <conditional>@include-spirit
     : usage-requirements
