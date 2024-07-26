@@ -10,11 +10,16 @@ require-b2 5.0.1 ;
 import-search /boost/config/checks ;
 import config : requires ;
 
+constant boost_dependencies_private :
+    /boost/function//boost_function
+    ;
+
 project
     : source-location ../src
     : common-requirements <library>$(boost_dependencies)
     : requirements
       <conditional>@include-spirit
+      <library>$(boost_dependencies_private)
     : usage-requirements
         <define>BOOST_SERIALIZATION_NO_LIB=1
 ;
