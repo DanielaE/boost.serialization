@@ -9,7 +9,7 @@
 project
     : id serialization_test
     : requirements <library>/boost/filesystem//boost_filesystem
-        <library>/boost/math//boost_math
+        <library>/boost/math//boost_math_tr1
     ;
 
 # import rules for testing conditional on config file variables
